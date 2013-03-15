@@ -257,109 +257,11 @@ ru:
     errors:
       <<: *errors
     models:
-      lamp:
-        one: Товар
-        other: Товары
-      fabrique:
-        one: Фабрика
-        other: Фабрики
-      category:
-        one: Категория
-        other: Категории
-      page:
-        one: Страница
-        other: Страницы
-      country:
-        one: Страна
-        other: Страны
-      site_setting:
-        one: Настройки
-        other: Настройки
-      gallerypicture:
-        one: Изображение
-        other: Изображения
-      label:
-        one: Ссылка на главной
-        other: Ссылки на главной
-      style:
-        one: Стиль
-        other: Стили
-      usage:
-        one: Назначение
-        other: Назначения
+      user:
+        one: Пользователь
+        other: Пользователи
 
 
     attributes:
-      lamp:
-        name: "Название"
-        identifier: "Артикул"
-        price: "Цена"
-        description: "Описание"
-        fabrique: "Фабрика"
-        style: "Стиль"
-        usage: "Назначение"
-        category: "Категория"
-        mainimage: "Изображение 1"
-        logomedium: "Изображение 2"
-        logolarge: "Изображение 3"
-
-      page:
-        name: "Название"
-        title: "Заголовок страницы"
-        keywords: "Ключевые слова"
-        description: "Описание страницы"
-        alias: "Уникальное имя"
-        text1: "Содержимое страницы №1"
-        text2: "Содержимое страницы №2"
-        hastemplate: "Динамичное содержимое ?"
-        partialname: "Название шаблона"
-        showinmenu: "Показать в меню ?"
-
-      country:
-        name: "Название"
-        fabrique: "Фабрики"
-
-      category:
-        name: "Название"
-        description: "Описание"
-        image: "Изображение"
-
-      fabrique:
-        name: "Название"
-        site: "Адрес сайта"
-        description: "Описание"
-        country: "Страна"
-
-      site_setting:
-        title: "Заголовок"
-        description: "Описание"
-        keywords: "Ключевые слова"
-        phone: "Телефон"
-        underphone: "Надпись под телефоном"
-        logo: "Логотип"
-        headerimage: "Большое изображение в шапке"
-        headerhref: "Ссылка для изображения в шапке"
-        headertext1: "Текст в шапке"
-        lefttext: "Текст слева под категориями"
-        footertext: "Текст внизу страницы"
-        perpage: "Количество элементов на странице"
-        linkscount: "Количество ссылок"
-        showbystyle: "Показывать раздел 'По стилю'"
-        showbyusage: "Показывать раздел 'По назначению'"
-        showbycountry: "Показывать раздел 'По стране'"
-        fabcount: "Кол-во производителей"
-
-      gallerypicture:
-        name: "Название"
-        mainimage: "Изображение"
-        hrefenable: "Кликабельно ?"
-        href: "Ссылка"
-        openinnewwindow: "Новое окно ?"
-
-      style:
-        name: "Название"
-        description: "Описание"
-      usage:
-        name: "Название"
-        description: "Описание"
-
+      user:
+        email: "EMAIL"
