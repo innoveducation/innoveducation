@@ -10,7 +10,7 @@ RailsAdmin.config do |config|
   ################  Global configuration  ################
   I18n.default_locale = :ru
   # Set the admin name here (optional second array element will appear in red). For example:
-  config.main_app_name = ['Empty', 'Admin']
+  config.main_app_name = ['Admin Panel v1.0', 'обр.связь : 8-(905)-122-22-66']
   # or for a more dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
