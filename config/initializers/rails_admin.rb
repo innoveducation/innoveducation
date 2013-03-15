@@ -6,7 +6,7 @@ require Rails.root.join('lib', 'rails_admin_duplicate.rb')
 
 RailsAdmin.config do |config|
 
-
+  config.authorize_with :cancan
   ################  Global configuration  ################
   I18n.default_locale = :ru
   # Set the admin name here (optional second array element will appear in red). For example:
