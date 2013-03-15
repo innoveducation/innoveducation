@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   
 
   rails_admin do
-#    include_all_fields
+    include_all_fields
     weight -1
     field :email do
       help { model = self.abstract_model.model_name.underscore; field = self.name; model_lookup = "admin.help.#{model}.#{field}".to_sym; field_lookup = "admin.help.#{field}".to_sym; I18n.t model_lookup, :help => help, :default => [field_lookup, help] }
