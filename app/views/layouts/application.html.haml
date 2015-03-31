@@ -1,0 +1,189 @@
+!!! 5
+%html
+	%head
+		%title Инновационные идеи в образовании
+		= stylesheet_link_tag    "application", :media => "all"
+		= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
+		= javascript_include_tag "application"
+		=stylesheet_link_tag "/jNotify-master/jquery/jNotify.jquery.css", :media => "all"
+		=javascript_include_tag "/jNotify-master/jquery/jNotify.jquery.js"
+
+		= csrf_meta_tags	
+		= stylesheet_link_tag "/smSlider/smslider.css"
+		= javascript_include_tag "/smSlider/jquery.smslider.min.js"
+		= raw"<script type='text/javascript'> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-43038911-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script>"
+	%body
+		.top
+			.menu
+				.menuw
+					%ul.topmenu
+						-topPages.each_with_index do |e, i|
+							-c = (e[:alias].eql? @pa) ? "active" : ""
+							%li{ :class => c }
+								%a{ :href => "/page/#{e[:alias]}" }
+									=raw e[:name]
+					.rightwhiteborder &nbsp;
+					-#.searchwrapper
+					-#	%input.search{ :type => 'text', :value => 'Поиск...' }
+					-#	.searchicon &nbsp;
+			.mainlogo &nbsp;
+		.menu2
+			%ul.menu2ul
+				-centerPages.each_with_index do |e, i|
+					%li{ :class => "menuli#{i + 1}" }
+						.supermenu
+							%a.sm{ :style => "width: 300px!important;" }
+								=e.name
+						%ul
+							-(getPages e.id).each do |e1|
+								%li{  }
+									%a{ :href => "/page/#{e1.alias}" }
+										=e1.name
+		.slider
+			%ul
+				-articles.each do |e|
+					%li
+						.slidebg{ :style => "background: url(\"#{e.logo.url}\");" }
+						.slidebg1 &nbsp;
+						.slidecontent
+							%a.slideheader{ :href => "/article/#{e[:alias]}" }
+								=e[:header]
+							.slideteaser
+								.slideteaserleft
+									=e[:teaser]
+								%a.slideteaserright{ :href => "/article/#{e[:alias]}" } Подробнее
+		.contentWrapper
+			%ul
+				%li
+					.contentLeft
+						%h1
+							=(@pp.nil? ? @p.nil? ? 'Добро пожаловать' : @p[:name] : @parentpage[:name]).gsub!("<br/>", " ")
+							
+						.hr &nbsp;
+						-if not @pp.nil?
+							%ul.subcontentmenu
+								-@pp.each_with_index do |e, i|
+									-c = (e[:alias].eql? @pa) ? "active" : ""
+									-c1 = 'first' if i.eql? 0
+									%li{ :class => c1 }
+										%a{ :class => c, :href => "/page/#{e[:alias]}" }
+											=raw e[:name]
+							.spacer11 &nbsp;
+							.hr &nbsp;
+							.hr &nbsp;
+							%h2
+								=@p[:name]
+						=yield
+				%li
+					.contentRight
+						.newsHeader
+							%h1 НОВОСТИ
+							.hr &nbsp;
+						-news3.each do |e|
+							.oneNews
+								%a.image{ :href => "/news/#{e[:alias]}" }
+									%img{ :src => "#{e.logo.url}" }
+								.teaser
+									%a.theader{ :href => "/news/#{e[:alias]}" }
+										=e[:header]
+									.tteaser
+										=e[:teaser]
+									.tdatetime
+										="#{e[:dt].strftime('%m.%d.%Y')}"
+									.tviews
+										="Просмотров: #{e[:views]}"
+							.hr &nbsp;
+						%div{ :style => "margin-top: 20px;" }
+							Подписаться на новости:
+						%div
+							%input.subscribe{ :type => "text", :style => "width: 100%", :value => "Введите ваш Email адрес и нажмите Enter" }
+						.bannerRight &nbsp;
+			&nbsp;
+			.prefooter
+				.hr &nbsp;
+				.partnersHeader
+					НАШИ ПАРТНЕРЫ
+				.hr &nbsp;
+				.car
+					%ul.carousel
+						%li.carouselwrapper
+							#carousel-gallery.carousel.touchcarousel.black-and-white
+								%ul.touchcarousel-container
+									-partners.each do |e|
+										-target = e[:openinnewtab] ? '_blank' : '_self'
+										%li.touchcarousel-item
+											%a{ :href => "#{e[:url]}", :target => "#{target}" }
+												%img{ :src => "#{e.logo.url}", :style => "height: 70px;" }
+		.footer
+			.footerContent
+				.footerCol.footer1
+					.hr1 &nbsp;
+					.container
+						.leftSide
+							%img{ :src => "/assets/starIcon.png" }
+						.rightSide
+							%ul
+								-topPages.each_with_index do |e, i|
+									-c = (e[:alias].eql? @pa) ? "act" : "nact"
+									%li
+										%a{ :class => c, :href => "/page/#{e[:alias]}" }
+											=raw e[:name]
+					.spacing12 &nbsp;
+					.hr2 &nbsp;
+					.container
+						.leftSide
+							&nbsp;
+						.rightSide
+							%ul
+								=raw ss[:footerleft]	
+					.spacing12 &nbsp;
+					.hr2 &nbsp;
+				.footerCol.footer2
+					.hr1 &nbsp;
+					.container
+						.leftSide
+							&nbsp;
+						.rightSide
+							.act КОНТАКТНАЯ ИНФОРМАЦИЯ
+					.spacing12 &nbsp;
+					.hr2 &nbsp; 
+					.container
+						.leftSide
+							%img{ :src => "/assets/phoneIcon.png" }
+						.rightSide
+							.nact
+								=raw ss[:phones]
+					.spacing12 &nbsp;
+					.hr2 &nbsp; 
+					.container
+						.leftSide
+							%img{ :src => "/assets/emailIcon.png" }
+						.rightSide
+							.nact
+								=raw ss[:email]
+					.spacing12 &nbsp;
+					.hr2 &nbsp; 
+					.container
+						.leftSide
+							%img{ :src => "/assets/skypeIcon.png" }
+						.rightSide
+							.nact
+								=raw ss[:skype]
+				.footerCol.footer3
+					.hr1 &nbsp;
+					.container
+						.leftSide
+							&nbsp;
+						.rightSide
+							.act АДРЕС
+					.spacing12 &nbsp;
+					.hr2 &nbsp; 
+					.container
+						.leftSide
+							%img{ :src => "/assets/addressIcon.png" }
+						.rightSide
+							.nact
+								=raw ss[:address]
+			.footerBottom
+				.footerBottomContent
+					=raw ss[:copyright]

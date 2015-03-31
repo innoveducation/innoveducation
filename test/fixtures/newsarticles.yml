@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  alias: MyString
+  header: MyString
+  teaser: MyString
+  text: MyText
+  position: 1
+  views: 1
+  dt: 2013-07-02 00:29:55
+
+two:
+  alias: MyString
+  header: MyString
+  teaser: MyString
+  text: MyText
+  position: 1
+  views: 1
+  dt: 2013-07-02 00:29:55

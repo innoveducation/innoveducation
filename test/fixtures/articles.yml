@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  header: MyString
+  teaser: MyString
+  text: MyText
+  position: 1
+
+two:
+  header: MyString
+  teaser: MyString
+  text: MyText
+  position: 1

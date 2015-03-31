@@ -1,0 +1,567 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+
+
+$w: 1148px;
+$fonts: 'ava', Georgia, Arial; 
+
+
+
+
+
+
+@font-face {
+		  font-family: 'ava';
+		  src: url('/fonts/avab-webfont.eot');
+		  src: url('/fonts/avab-webfont.eot') format('embedded-opentype'),
+		  url('/fonts/avab-webfont.woff') format('woff'),
+		  url('/fonts/avab-webfont.ttf') format('truetype');
+		  font-weight: normal; 
+		  font-style: normal;
+}
+
+
+
+*{ font-family: $fonts;  }
+body, ul, li, table, tr, td{ margin: 0px; padding: 0px;}
+li{ display: inline-block; float: left; vertical-align: top; }
+.page {   }
+
+
+.top {	
+	width: 100%; min-width: $w; background: url('h_bg1.png');
+	.menu{
+		width: 100%; background-color: rgba(255,255,255,0.1); border-bottom: 1px solid #99bbce;
+		.menuw {
+			width: $w; height: 55px; border-left: 1px dotted #fff; border-right: 1px dotted #000; margin: 0 auto;
+			.topmenu {
+				float: left;
+				li {
+					height: 55px;
+					a:hover { background: #277caf; }
+					a {
+						display: inline-block;
+						line-height: 20px;
+						vertical-align: middle;
+						padding: 12px 20px 0 20px;
+						border-left: 1px dotted #000;
+						border-right: 1px dotted #fff;
+						text-align: center;
+						height: 42px;
+						font-size: 12px;
+						font-weight: bold;
+						color: #fff;
+						text-shadow: 1px 1px 1px #00314e;
+						text-decoration: none;
+						table {
+							width: 100%;
+							tr {
+								vertical-align: middle;
+								td {
+								
+									height: 50px; font-size: 12px; font-weight: bold; color: #fff; text-shadow: 1px 1px 1px #00314e;
+								}
+							}
+						}
+					}
+	
+				}
+
+				li.active {
+					background: url('menuitembg.png');  background-repeat: repeat-x; background-position: bottom center;
+					a {
+						background: url('menuarrow.png'); background-repeat: no-repeat; background-position: center 40px;
+						color: #71c1ff;
+						table{ tr { td { color: #71c1ff; } } }
+					}
+				}
+			}
+			.rightwhiteborder { width: 1px; height: 55px; overflow: hidden; border-right: 1px dotted #fff; float: right; }
+			.searchwrapper{
+				float: right; margin: 12px 12px 0 0; 
+				input.search { float: right; width: 280px; height: 30px; background: rgba(255, 255, 255, 0.2); border: 0px; margin:0px; padding: 0px; color: #fff; font-weight: bold;  text-shadow: 1px 1px 1px #00314e; padding-left: 10px;  }
+				.searchicon { float: right; width: 30px; height: 30px; background: url('searchicon.png'); cursor: pointer;  }
+			}
+
+		}
+	}
+	.mainlogo {
+		width: 100%; height: 150px; background: url('mainlogo.png'); background-position: center center; background-repeat: no-repeat;
+	}
+}
+
+
+.menu2 {
+	width: 100%; min-width: $w; height: 80px; background: #fff; overflow: show;
+	.menu2ul {
+		width: $w; display: block; margin: 0 auto; padding-top: 25px; text-align: center; 
+		.menuli1 {
+			text-align: left!important;
+			ul {
+				text-align: left!important;
+			}
+		}
+		.menuli2 {
+			text-align: center!important;
+			ul {
+				text-align: center!important;
+			}
+		}
+		.menuli3 {
+			text-align: right!important;
+			ul {
+				text-align: right!important;
+			}
+		}
+		li {
+			width: $w/3;
+			.supermenu {
+				border-bottom: 1px solid #8a8a8a; color: #626262; font-weight: normal; width: 100%;
+				a.sm {
+					display: inline-block;
+					padding: 5px 40px 5px 10px;
+					background: url('menu2arrow.png');
+					background-repeat: no-repeat;
+					background-position: right center;
+					font-size: 16px;	
+					cursor: pointer;
+					border: 1px solid #fff;
+				}
+				a.sm:hover {
+					border: 1px solid #c8c8c8;
+				}
+			} 
+			ul {
+				display: none;
+				width: $w/3;
+				position: absolute;
+				li {
+					width: 100%;
+					
+					display: block;
+					clear: both;
+					a {	
+						display: inline-block;
+						background: #fff;
+						padding: 10px;
+						border-left: 1px solid #808182;
+						border-right: 1px solid #808182;
+						border-top: 1px solid #679ab7;
+						border-bottom: 1px solid #679ab7;
+						color: #626262;
+						text-align: left;
+						text-decoration: none;	
+					}
+					a:hover {
+						background: #025787;
+						color: #fff;	
+					}
+				}
+			}
+		}
+	}	
+}
+
+$sheight: 332px;
+//$swidth: 1300px;
+$swidth: 1148px;
+.slider {
+	width: $swidth;
+	margin: 0 auto;
+	height: $sheight;
+	.sm_prev {
+		position: relative;
+		top: 0px;
+		margin-top: -75px;
+		margin-left: 40px;
+		float: left;
+		width: 36px;
+		height: 36px;
+		background: url("sliderArrows.png");
+	}
+	.sm_prev:hover {
+		background: url("sliderArrows.png");
+	}
+	.sm_next {
+		background: url("sliderArrows.png");
+		position: relative;
+		top: 0px;
+		margin-top: -75px;
+		margin-right: 1025px;
+		float: right;
+		width: 36px;
+		height: 36px;
+		background-position: -32px 0px;
+	}
+	.sm_next:hover {
+		background: url("sliderArrows.png");
+		background-position: -32px 0px;
+	}
+	ul {
+		
+		display: block;
+		position: absolute;
+		width: $swidth;
+		height: $sheight;
+		margin: 0 auto;
+		.slidebg {
+			position: absolute;
+			top: 0px;
+			width: $swidth;
+			height: $sheight;
+		}
+		.slidebg1 {
+			position: absolute;
+			top: 0px;
+			width: 520px;
+			margin-left: 0px;
+			height: $sheight;
+			background: #004682;
+			-webkit-box-shadow: inset 0px 0px 120px 0px #333;
+			box-shadow: inset 0px 0px 120px 0px #333;
+		}
+		.slidecontent {
+			text-decoration: none;
+			position: absolute;
+			top: 0px;
+			width: $swidth;
+			margin-left: 0px;
+			height: $sheight;
+			text-align: left;
+			a.slideheader {
+				text-decoration: none;
+				display: block;
+				width: 446px;
+				height: 100px;
+				font-size: 36px;
+				margin: 75px 0 0 40px;
+				color: #fff;
+				overflow: hidden;
+				text-align: left;
+			}
+			.slideteaser {
+				width: 518px;
+				background-color: rgba(255, 255, 255, 0.5);
+				color: #4a4a4a;
+				font-size: 18px;
+				border: 1px solid #306899;
+				/*padding: 6px 0 0 25px;*/
+				margin-left: 0px;
+				text-transform: uppercase;
+		 		height: 38px;
+				.slideteaserleft {
+					width: 300px;
+					float: left;
+					margin-left: 25px;
+					margin-top: 8px;
+				}
+				.slideteaserright {
+					width: 130px;
+					height: 30px;
+					padding-top: 8px;
+					float: right;
+					background: #004682;
+					color: #fff;
+					font-weight: bold;
+					padding-left: 15px;
+					text-transform: capitalize;
+					text-decoration: none;
+				}			
+			}
+		}
+	}
+}
+
+.contentWrapper {
+	width: $w;
+	margin: 0 auto;
+	margin-top: 30px;
+	position: relative;
+	.contentLeft{
+		width: 794px;
+		margin-right: 31px;
+		margin-bottom: 20px;
+		p{
+			width: 794px;
+			text-align: justify;
+		}
+	}
+	.contentRight{
+		width: 322px;
+		.hr{
+			width: 100%;
+		}
+		.newsHeader{
+			width: 100%; text-align: center;
+			.hr { width: 100%; }
+		}
+		.bannerRight{
+			width: 100%; height: 437px; background: url("/banner.jpg"); margin-top: 15px;
+		}
+		.oneNews{
+			width: 100%; height: 72px; margin-top: 15px; margin-bottom: 15px;
+			.image {
+				float: left; width: 117px; height: 72px;
+				img{
+					width: 117px; height: 72px;
+				}
+			}
+			.teaser{
+				float: right; width: 197px; text-align: left;
+				.theader{
+					width: 100%;
+					text-align: left;
+					color: #004682;
+					font-size: 11px;
+					font-family: 'Myriad Pro';
+					font-weight: bold;
+					text-decoration: none;
+					position: relative;
+					top: -5px;
+				}
+				.theader:hover{
+					text-decoration: underline;
+				}
+				.tteaser{
+					width: 100%;
+					height: 27px;
+					overflow: hidden;
+					text-align: justify;
+					margin-top: 5px;
+					margin-bottom: 10px;
+					color: #000;
+					font-size: 11px;
+					font-family: 'Tahoma';
+					img{ border: 0px; }
+				}
+				.tdatetime{
+					float: left;
+					color: #004682;
+					font-size: 11px;
+					font-family: 'Tahoma';
+				}
+				.tviews{
+					float: right;
+					color: #004682;
+					font-size: 11px;
+					font-family: 'Tahoma';
+				
+				}
+			}
+		}
+
+	}
+}
+.prefooter{
+	width: $w; text-align: left;
+	.hr {
+		width: 100%; margin-top: 15px; margin-bottom: 15px;
+	}
+	.partnersHeader{
+		color: #4b4b4b;
+		font-size: 32px;
+		font-family: $fonts;
+	}
+	.car{
+		width: $w;
+		height: 94px;
+		ul.carousel{
+			display: block;
+			li{
+				a{
+					text-decoration: none;
+				}
+			}
+			li.leftarrow{
+				width: 35px;
+				height: 94px;
+			
+				a{
+					display: block;
+					margin-top: 38px;
+					margin-left: 5px;
+					width: 19px;
+					height: 19px;
+					/*background: url("leftCarouselArrow.png");*/
+				}
+			}
+			li.carouselwrapper{
+				width: 100%;
+				height: 94px;
+				background: url("partnersbg.png");
+				background-position: center center;
+				.carousel{
+					width: 1110px;
+					height: 70px;
+					margin: 10px 0 0 18px!important;	
+					overflow: hidden;
+					ul{
+						li{
+							
+							a{
+								text-decoration: none;
+							}
+						}
+					}
+				}
+			}
+			li.rightarrow{
+				width: 25px;
+				height: 94px;
+				a{
+					display: block;
+					margin-left: 10px;
+					width: 19px;
+					margin-top: 38px;
+					height: 19px;
+					/*background: url("rightCarouselArrow.png");*/
+				}
+			}
+		}
+	}
+}
+
+.footer{
+	width: 100%; min-width: $w; background: url('h_bg1.png');
+	margin-top: 50px;
+	border-top: 2px solid #000000;
+	.footerContent{
+		height: 265px;
+		padding-top: 30px;
+		width: $w;
+		margin: 0 auto;
+		.footerCol{
+			width: 33%;
+			float: left;
+			.hr1 { width: 345px; height: 7px; overflow: hidden; background: rgba(255, 255, 255, 0.3);  }
+			.hr2 { width: 345px; height: 1px; overflow: hidden; background: rgba(255, 255, 255, 0.3);  }
+			.spacing12{ width: 100%; height: 12px; overflow: hidden; }
+			.container{
+				width: 345px; margin-top: 12px;
+				.act{
+					font-family: Tahoma;
+					font-size: 11px;
+					color: #fff;
+					text-shadow: 1px 1px 1px #00314e;
+				}
+				.nact{
+					font-family: Tahoma;
+					font-size: 11px;
+					color: #71c1ff;
+					text-shadow: 1px 1px 1px #00314e;
+				}	
+				.leftSide{
+					width: 58px;
+					float: left;
+				}
+				.rightSide{
+					float: left;
+					ul{
+						width: 270px;
+						li{
+							display: block;
+							width: 100%;
+							a{
+								text-decoration: none;
+							}
+							a:hover{
+								font-family: Tahoma;
+								font-size: 11px;
+								color: #fff;
+								text-shadow: 1px 1px 1px #00314e;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.footerBottom{
+		width: 100%; min-width: $w; background-color: rgba(255, 255, 255, 0.2);
+		border-top: 1px solid #7a7a7a;
+		font-family: 'Tahoma';
+		font-size: 12px;
+		padding: 12px 0 12px 0;
+		.footerBottomContent{
+			width: $w;
+			margin: 0 auto;
+			color: #fff;
+			font-family: Tahoma;
+			font-size: 13px;
+		}
+	}
+}
+
+h1 {
+	color: #5c5c5c;
+	font-size: 20px;
+	margin: 0px;
+}
+h2 {
+	color: #004682;
+	font-size: 18px;
+}
+ul.subcontentmenu {
+	padding: 11px 0 0 0;
+	li{
+		border-left: 1px solid #004682;
+		a{
+			margin: 0 11px 0 11px;
+			color: #004682;
+			text-decoration: none;
+		}
+		a:hover{
+			text-decoration: underline;
+		}
+		a.active{
+			text-decoration: underline;
+		}
+	}
+	li.first{
+		a{
+			margin: 0 11px 0 0;
+		}
+		border-left: none;
+	}
+}
+.hr {
+	width: 794px;
+	background: #929292;
+	height: 1px;
+	overflow: hidden;
+	margin-top: 4px;
+	margin-bottom: 0px;
+}
+.spacer11 {
+	width: 100%;
+	height: 11px;
+	overflow: hidden;
+}
+
+.formSuccess { display: none; }
+.formError { display: none; }
+.leftForm{
+	float: left; width: 538px; margin-top: 35px;
+	.text1{ font-size: 25px; text-transform: upperline; float: left; color: #003654; }
+	_input { width: 518px; height: 30px; border: 1px solid #003654; background: none; margin-top: 20px; color: #003654; padding-left: 20px; font-size: 25px; }
+	input { width: 518px;  }
+	.fio{  }
+	.phone{ }
+	.message{ }
+	da.send { float: right; margin-top: 20px; color: #003654; text-transform: upperline;  font-size: 25px; text-decoration: underline;  }
+	a.send { float: left; margin-top: 20px; color: #003654; text-transform: upperline;  font-size: 14px; text-decoration: underline;  }
+	a.send:hover { text-decoration: none; }
+}

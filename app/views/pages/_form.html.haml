@@ -1,0 +1,8 @@
+.formSuccess=raw 'Спасибо за обращение.<br/>Мы свяжемся с вами как можно быстрее'
+.formError=raw 'Возникла ошибка при отправке.<br/>Внимательно проверьте заполненную информацию на ошибки.'
+.leftForm
+	.text1='Форма обратной связи'
+	%input.form.fio{ :type => "text", :value => "Имя" }
+	%input.form.phone{ :type => "text", :value => "Email или телефон" }
+	%input.form.message{ :type => "text", :value => "Содержание обращения" }
+	%a.send{ :href => "#" }='Отправить'

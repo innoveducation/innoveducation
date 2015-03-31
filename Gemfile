@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
-
+gem 'therubyracer'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
 gem "cancan"
-gem 'sqlite3'
 gem 'i18n'
-gem 'unicorn'
+gem 'pg'
+#gem 'unicorn'
 gem 'rb-readline'
 gem 'haml'
 gem 'rails_admin'
@@ -51,4 +51,4 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 gem "devise"
-
+gem 'rails_12factor'

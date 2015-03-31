@@ -1,10 +1,23 @@
 EMPTY::Application.routes.draw do
+  get "news/show"
+
+  get "articles/show"
+
+  get "pages/main"
+  
   mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :users
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-
+  root :to => 'pages#show'
+  match 'page/:pagealias' => 'pages#show'
+  match 'article/:articlealias' => 'articles#show'
+  match 'news/:newsalias' => 'news#show'
+  match '/mail' => 'pages#mail'
+  match '/subscribe' => 'pages#subscribe'
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

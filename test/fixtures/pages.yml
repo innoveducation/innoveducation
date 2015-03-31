@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  alias: MyString
+  name: MyString
+  title: MyString
+  keywords: MyString
+  description: MyString
+  content1: MyText
+  content2: MyText
+  showinmenu: false
+  hastemplate: false
+  partialname: MyString
+  position: 1
+  ancestry: MyString
+
+two:
+  alias: MyString
+  name: MyString
+  title: MyString
+  keywords: MyString
+  description: MyString
+  content1: MyText
+  content2: MyText
+  showinmenu: false
+  hastemplate: false
+  partialname: MyString
+  position: 1
+  ancestry: MyString
